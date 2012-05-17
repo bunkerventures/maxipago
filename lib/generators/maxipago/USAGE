@@ -1,0 +1,3 @@
+To copy a Maxipago initializer to your Rails App, with some configuration values, just do:
+
+    rails generate maxipago:install
