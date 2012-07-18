@@ -46,7 +46,7 @@ module Maxipago
             xml.request {
               xml.filterOptions {
                 xml.period self.options[:period]
-                xml.pagesize self.options[:pagesize] unless self.options[:pagesize].blank?
+                xml.pageSize self.options[:pagesize] unless self.options[:pagesize].blank?
                 xml.startDate self.options[:start_date] unless self.options[:start_date].blank?
                 xml.endDate self.options[:end_date] unless self.options[:end_date].blank?
                 xml.startTime self.options[:start_time] unless self.options[:start_time].blank?
