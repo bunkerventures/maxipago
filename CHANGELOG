@@ -4,3 +4,10 @@ Changelog
  (0.0.2)
 
  - Fixed bug with report pagination (rapi)
+
+ (1.0.0.rc1)
+
+ - Breaking backwards compatibility
+ - Added feature fraud control
+ - Added feature debit on-line
+ - Added feature cancel a credit card recurrence
