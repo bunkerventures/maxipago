@@ -1,0 +1,12 @@
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+
+branches:
+  only:
+    - 1.0.0.rc1
+
+notifications:
+  recipients:
+    - brunosoab@gmail.com
