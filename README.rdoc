@@ -2,7 +2,7 @@
 
 Adicione ao Gemfile da sua aplicação a seguinte linha:
 
-  gem "maxipago", :git => "git://github.com/bonera/maxipago.git"
+  gem "maxipago", :git => "git://github.com/bonera/maxipago.git", :branch => "1.0.0.rc1"
 
 == Instalar inicializador da GEM
 
@@ -81,7 +81,27 @@ Use uma variável de ambiente para sua *key* do maxipago e seu *id*.
 
 == Como usar?
 
-Verifique os testes na pasta spec/ do repositório para ver exemplos de uso. Os testes cobrem todos os comandos suportados pela API.
+Crie um client onde podemos executar comandos:
+
+  mp = Maxipago::Client.new
+  => #<Maxipago::Client:0x007fb1f3d171d8>
+
+Crie um request do tipo da api que queremos usar (api, transaction ou rapi):
+
+  api = Maxipago::RequestBuilder::ApiRequest.new(MAX_ID, MAX_APIKEY)
+  => #<Maxipago::RequestBuilder::ApiRequest:0x007fb1f3d2f440 @maxid="100", @apikey="21g8u6gh6szw1gywfs165vui", @api_version="3.1.1.15", @header={"Content-Type"=>"text/xml"}>
+
+Faça o client carregar o request gerado no passo anterior:
+
+  mp.use(api)
+  => #<Maxipago::RequestBuilder::ApiRequest:0x007fb1f3d2f440 @maxid="100", @apikey="21g8u6gh6szw1gywfs165vui", @api_version="3.1.1.15", @header={"Content-Type"=>"text/xml"}>
+
+Execute um comando da api escolhida:
+
+  mp.execute({command: "add_consumer", customer_id_ext: "1", firstname: "Foo", lastname: "Bar"})
+  => {:header=>#<Net::HTTPOK 200 OK readbody=true>, :body=>"<?xml version=\"1.0\" encoding=\"UTF-8\" ?><api-response><errorCode>0</errorCode><errorMessage></errorMessage><command>add-consumer</command><time>1371687537124</time><result><customerId>14289</customerId></result></api-response>", :message=>"OK"}
+
+Verifique os testes na pasta spec/ do repositório para ver mais exemplos de uso. Os testes cobrem todos os comandos suportados.
 
 == Licença de uso
 
