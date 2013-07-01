@@ -2,7 +2,7 @@
 
 Adicione ao Gemfile da sua aplicação a seguinte linha:
 
-  gem "maxipago", :git => "git://github.com/bonera/maxipago.git", :branch => "1.0.0.rc1"
+  gem "maxipago", :git => "git://github.com/brunosoab/maxipago.git", :branch => "1.0.0.rc1"
 
 == Instalar inicializador da GEM
 
