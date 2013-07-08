@@ -34,8 +34,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "authorization",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21312",
                     number: setup[:card_number],
@@ -53,8 +51,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "capture",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     order_id: "0AF90437:013E8F22A46F:94D9:01EC3389",
                     reference_num: "21312",
                     charge_total: "1.98" })
@@ -68,8 +64,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "sale",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     billing_name: "Foo Bar",
@@ -89,8 +83,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "sale",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     billing_name: "DHH",
@@ -110,8 +102,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "sale",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     billing_name: "DHH",
@@ -131,8 +121,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "sale",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     billing_name: "DHH",
@@ -152,8 +140,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "void",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     transaction_id: "505107" })
       @mp.response[:body].should eq(body)
     end
@@ -165,8 +151,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "reversal",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     order_id: "0AF90437:013E8F8BA24E:B68E:00DF7C9C",
                     reference_num: "21312",
                     charge_total: "10.00" })
@@ -180,8 +164,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "recurring",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     number: setup[:card_number],
@@ -204,8 +186,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "bank_bill",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "12",
                     reference_num: "21313",
                     billing_name: "Foo Bar",
@@ -229,8 +209,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "bank_bill",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "12",
                     reference_num: "21313",
                     billing_name: "Foo Bar",
@@ -255,8 +233,6 @@ describe Maxipago::Client do
 
       @mp.use(transaction)
       @mp.execute({ command: "online_debit",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "17",
                     reference_num: "21313",
                     billing_name: "Foo Bar",
@@ -279,8 +255,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "sale",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     customer_id: "12837",
@@ -296,8 +270,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "recurring",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     customer_id: "12837",
@@ -318,8 +290,6 @@ describe Maxipago::Client do
                             status: ["200", "OK"] )
       @mp.use(transaction)
       @mp.execute({ command: "save_on_file",
-                    maxid: setup[:maxid],
-                    apikey: setup[:apikey],
                     processor_id: "1",
                     reference_num: "21313",
                     billing_name: "Foo Bar",

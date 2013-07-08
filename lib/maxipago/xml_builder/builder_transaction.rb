@@ -58,8 +58,8 @@ module Maxipago
           xml.send("transaction-request") {
           xml.version self.apiversion
           xml.verification {
-            xml.merchantId self.options[:maxid]
-            xml.merchantKey self.options[:apikey]
+            xml.merchantId self.maxid
+            xml.merchantKey self.apikey
           }
           xml.order {
             xml.auth {
