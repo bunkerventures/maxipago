@@ -4,7 +4,7 @@ require 'uri'
 module Maxipago
   module RequestBuilder
     class TransactionRequest < Maxipago::RequestBuilder::Request
-      URL = MP_URL_TRANSACTION ||= "https://testapi.maxipago.net/UniversalAPI/postXML"
+      URL = ENV['MP_URL_TRANSACTION'] || "https://testapi.maxipago.net/UniversalAPI/postXML"
 
       private
 

@@ -4,7 +4,7 @@ require 'uri'
 module Maxipago
   module RequestBuilder
     class RapiRequest < Maxipago::RequestBuilder::Request
-      URL = MP_URL_RAPI ||= "https://testapi.maxipago.net/ReportsAPI/servlet/ReportsAPI"
+      URL = ENV['MP_URL_RAPI'] || "https://testapi.maxipago.net/ReportsAPI/servlet/ReportsAPI"
 
       private
 
