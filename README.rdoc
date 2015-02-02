@@ -1,10 +1,8 @@
-{<img src="https://travis-ci.org/brunosoab/maxipago.png?branch=1.0.0.rc1" alt="Build Status" />}[https://travis-ci.org/brunosoab/maxipago]
-
 == Adicionar a GEM na sua aplicação Rails 3 ou Rails 4
 
 Adicione ao Gemfile da sua aplicação a seguinte linha:
 
-  gem "maxipago", :git => "git://github.com/brunosoab/maxipago.git", :branch => "1.0.0.rc1"
+  gem "maxipago", :git => "git://github.com/bonera/maxipago.git", :branch => "1.0.0.rc1"
 
 == Instalar inicializador da GEM
 
