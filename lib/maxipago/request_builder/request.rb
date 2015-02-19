@@ -39,8 +39,12 @@ module Maxipago
 
       def set_http_session
         @http_session = Net::HTTP.new(@uri.host, @uri.port)
-        @http_session.use_ssl = true if @uri.scheme == "https"
-        set_ssl_mode if @http_session.use_ssl?
+
+        if @uri.scheme == "https"
+          @http_session.use_ssl = true
+          @http_session.ssl_version = :TLSv1
+          set_ssl_mode if @http_session.use_ssl?
+        end
       end
 
       def set_ssl_mode
