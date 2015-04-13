@@ -22,6 +22,25 @@ module Maxipago
         builder.to_xml(indent: 2)
       end
 
+      def one_order_report
+        builder = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
+          xml.send("rapi-request") {
+            xml.verification {
+              xml.merchantId self.maxid
+              xml.merchantKey self.apikey
+            }
+            xml.command "transactionDetailReport"
+            xml.request {
+              xml.filterOptions {
+                xml.orderId self.options[:order_id]
+              }
+            }
+          }
+        end
+        builder.to_xml(indent: 2)
+      end
+
+
       def list_transactions_report
         builder = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
           xml.send("rapi-request") {
