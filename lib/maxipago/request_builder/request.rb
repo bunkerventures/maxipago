@@ -20,6 +20,8 @@ module Maxipago
       private
 
       def send_request(xml)
+        Rails.logger.info("=== SEND REQUEST")
+        Rails.logger.info(xml)
         set_uri
         set_http_session
 
